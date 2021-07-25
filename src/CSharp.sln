@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.OverlappedIO", "CSharp.OverlappedIO\CSharp.OverlappedIO.csproj", "{A092263C-F22F-4B5C-9AED-C8E584FAB159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Boxing", "CSharp.Boxing\CSharp.Boxing.csproj", "{F352191B-9609-410D-8EE6-CCE1770AF1F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{A092263C-F22F-4B5C-9AED-C8E584FAB159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A092263C-F22F-4B5C-9AED-C8E584FAB159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A092263C-F22F-4B5C-9AED-C8E584FAB159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
