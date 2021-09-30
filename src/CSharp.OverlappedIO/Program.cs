@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -13,6 +14,15 @@ namespace CSharp.OverlappedIO
         private static unsafe void Main()
         {
             const String lpFileName = "file.txt";
+            const Int32 bytesCount = 512 * 1024 * 1024;
+            byte[] fileBytes = new byte[bytesCount];
+            for (int i = 0; i < bytesCount; i++)
+            {
+                fileBytes[i] = (byte) i;
+            }
+            File.Delete(lpFileName);
+            File.WriteAllBytes(lpFileName, fileBytes);
+
             SafeFileHandle fileHandle = Kernel32.CreateFile(
                 lpFileName,
                 (UInt32) (Kernel32.AccessRights.GENERIC_READ | Kernel32.AccessRights.GENERIC_WRITE),
@@ -25,6 +35,7 @@ namespace CSharp.OverlappedIO
 #pragma warning disable CA1416
             ThreadPool.BindHandle(fileHandle);
             Overlapped managedOverlapped = new Overlapped();
+            Byte[] lpBuffer = new Byte[bytesCount];
             NativeOverlapped* nativeOverlapped = managedOverlapped.Pack(
                 (code, bytes, overlapped) =>
                 {
@@ -34,6 +45,7 @@ namespace CSharp.OverlappedIO
                         $"Code: {JsonConvert.SerializeObject(code)}\n" +
                         $"Length: {JsonConvert.SerializeObject(bytes)}\n" +
                         $"Overlapped: {JsonConvert.SerializeObject(*overlapped)}\n" +
+                        $"Last byte: {lpBuffer.Last()}\n" +
                         "-------------------------------------------\n"
                     );
                 },
@@ -41,12 +53,10 @@ namespace CSharp.OverlappedIO
             );
 #pragma warning restore CA1416
             const Int32 ErrorIOPending = 997;
-            const Int32 bytesToRead = 512 * 1000;
-            Byte[] lpBuffer = new Byte[bytesToRead];
             Boolean result = Kernel32.ReadFile(
                 fileHandle,
                 lpBuffer,
-                bytesToRead,
+                bytesCount,
                 IntPtr.Zero,
                 nativeOverlapped
             );
