@@ -22,6 +22,7 @@ namespace CSharp.OverlappedIO
                 Kernel32.FILE_FLAG_OVERLAPPED | Kernel32.FILE_FLAG_NO_BUFFERING,
                 IntPtr.Zero
             );
+#pragma warning disable CA1416
             ThreadPool.BindHandle(fileHandle);
             Overlapped managedOverlapped = new Overlapped();
             NativeOverlapped* nativeOverlapped = managedOverlapped.Pack(
@@ -38,6 +39,7 @@ namespace CSharp.OverlappedIO
                 },
                 null
             );
+#pragma warning restore CA1416
             const Int32 ErrorIOPending = 997;
             const Int32 bytesToRead = 512 * 1000;
             Byte[] lpBuffer = new Byte[bytesToRead];
@@ -55,8 +57,10 @@ namespace CSharp.OverlappedIO
                     "Operation completed synchronously\n" +
                     "-------------------------------------------\n"
                 );
+#pragma warning disable CA1416
                 Overlapped.Unpack(nativeOverlapped);
                 Overlapped.Free(nativeOverlapped);
+#pragma warning restore CA1416
             }
             else
             {
@@ -69,8 +73,10 @@ namespace CSharp.OverlappedIO
                         $"Error code: {error}\n" +
                         "-------------------------------------------\n"
                     );
+#pragma warning disable CA1416
                     Overlapped.Unpack(nativeOverlapped);
                     Overlapped.Free(nativeOverlapped);
+#pragma warning restore CA1416
                 }
                 Console.WriteLine(
                     "-------------------------------------------\n" +
