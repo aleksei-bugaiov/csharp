@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.OverlappedIO", "CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Boxing", "CSharp.Boxing\CSharp.Boxing.csproj", "{F352191B-9609-410D-8EE6-CCE1770AF1F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Redis", "CSharp.Redis\CSharp.Redis.csproj", "{15336B92-D53D-4257-BBF4-88C6A0456B3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F352191B-9609-410D-8EE6-CCE1770AF1F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
