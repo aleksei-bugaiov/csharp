@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Boxing", "CSharp.Box
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Redis", "CSharp.Redis\CSharp.Redis.csproj", "{15336B92-D53D-4257-BBF4-88C6A0456B3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.ThreadStarvation", "CSharp.ThreadStarvation\CSharp.ThreadStarvation.csproj", "{8A3122D8-6B9B-40C8-840F-73D0538296D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15336B92-D53D-4257-BBF4-88C6A0456B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3122D8-6B9B-40C8-840F-73D0538296D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3122D8-6B9B-40C8-840F-73D0538296D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3122D8-6B9B-40C8-840F-73D0538296D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3122D8-6B9B-40C8-840F-73D0538296D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
